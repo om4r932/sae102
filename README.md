@@ -7,7 +7,7 @@ Ce document correspond au sujet de la SAÉ S1.02 de l'année universitaire 2022/
 
 ## Évaluation
 
-* La SAÉ sera notée de la manière suivante : 
+La SAÉ sera notée de la manière suivante : 
 - Évaluation du rendu : 8 points répartis de la manière suivante
     - Correction automatique du code via des tests unitaires : 2 points
     - Tests unitaires rendus : 2 points
@@ -23,10 +23,10 @@ Le sujet est la suite de la SAÉ S01.01. La correction de cette SAÉ est donnée
 
 **Remarque :** Les noms des fonctions à définir sont en anglais pour faire la différence avec les fonctions définies dans la SAÉ S01.01. 
 
-**Important :** Dans ce projet :
+**Important :** Dans ce projet
 - une personne fait référence à une chaîne de caractères qui est le prénom de cette personne ; par exemple `"Alice"` est une personne.
-- un groupe de personnes est un tableau de personnes, c'est-à-dire un tableau de chaînes de caractères qui sont les prénoms des personnes ; par exemple `["Alice", "Bob"]` est un groupe de deux personnes.
-- le terme réseau (network en anglais) correspond à un dictionnaire dont les clés sont les prénoms des personnes et les valeurs des tableaux contenant la liste des amis de la personne, comme dans la SAÉ S01.01 ; par exemple
+- un groupe de personnes est un tableau de personnes, c'est-à-dire un tableau de chaînes de caractères qui sont les prénoms des personnes. Par exemple, `["Alice", "Bob"]` est un groupe de deux personnes.
+- le terme réseau (network en anglais) correspond à un dictionnaire dont les clés sont les prénoms des personnes et les valeurs des tableaux contenant la liste des amis de la personne, comme dans la SAÉ S01.01. Par exemple,
   ```python
   {
     "Alice" : ["Bob", "Dominique"],
@@ -91,7 +91,7 @@ L'appel de cette fonction avec le réseau donné en exemple doit retourner `True
 
 ### Question 7
 
-Pour trouver une communauté maximale (au sens où il n'existe personne qui peut être ajoutée dans cette communauté) dans un réseau, une heuristique est la suivante :
+Pour trouver une communauté maximale (au sens où il n'existe personne qui puisse être ajoutée dans cette communauté) dans un réseau, une heuristique est la suivante :
 - On part d'une communauté vide.
 - On considère les personnes les unes après les autres. Pour chacune des personnes, si celle-ci est amie avec tous les membres de la communauté déjà créée, alors on l'ajoute à la communauté.
 
@@ -113,7 +113,7 @@ L'appel de cette fonction avec le réseau donné en exemple et le groupe `["Alic
 
 Définir la fonction `find_community_by_decreasing_popularity` prenant en paramètre un réseau. La fonction doit trier l'ensemble des personnes du réseau selon l'ordre décroissant de popularité puis retourner la communauté trouvée en appliquant l'heuristique de construction de communauté maximale expliquée plus haut.
 
-L'appel de cette fonction avec le réseau donné en exemple doit retourner la communauté `["Alice", "Bob", "Dominique"]`.
+L'appel de cette fonction avec le réseau donné en exemple doit retourner la communauté `["Bob", "Alice", "Dominique"]` (l'ordre dans le tableau n'a pas d'importance).
 
 ### Question 10
 
@@ -139,7 +139,7 @@ Comparer théoriquement et expérimentalement les deux heuristiques de construct
 
 Définir la fonction `find_max_community` prenant en paramètre un réseau et appliquant l'heuristique de recherche de communauté maximale donnée par `find_community_from_person` pour toutes les personnes du réseau. La fonction doit retourner la plus grande communauté trouvée.
 
-L'appel de cette fonction avec le réseau donné en exemple doit retourner la communauté `["Alice", "Bob", "Dominique"]`. 
+L'appel de cette fonction avec le réseau donné en exemple doit retourner la communauté `["Alice", "Bob", "Dominique"]` (peu importe l'ordre). 
 
 ## Développement et rendu
 
