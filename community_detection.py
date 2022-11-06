@@ -1,5 +1,3 @@
-from random import shuffle
-
 ##############
 # SAE S01.01 #
 ##############
@@ -20,7 +18,7 @@ def liste_amis(amis, prenom):
 
 def nb_amis(amis, prenom):
     """ Retourne le nombre d'amis de prenom en fonction du tableau amis. """
-    return len(friends(amis, prenom))
+    return len(liste_amis(amis, prenom))
 
 
 def personnes_reseau(amis):
@@ -54,15 +52,15 @@ def lecture_reseau(path):
 def dico_reseau(amis):
     """ Retourne le dictionnaire correspondant au réseau."""
     dico = {}
-    people = reseau(amis)
+    people = personnes_reseau(amis)
     i = 0
     while i < len(people):
-        dico[people[i]] = friends(amis, people[i])
+        dico[people[i]] = liste_amis(amis, people[i])
         i += 1
     return dico
 
 def nb_amis_plus_pop (dico_reseau):
-    """ Retourne le nombre d'amis des personnes ayant le plus d'amis"""
+    """ Retourne le nombre d'amis des personnes ayant le plus d'amis."""
     personnes = list(dico_reseau)
     maxi = len(dico_reseau[personnes[0]])
     i = 1
@@ -74,7 +72,7 @@ def nb_amis_plus_pop (dico_reseau):
 
 
 def les_plus_pop (dico_reseau):
-    """ Retourne les personnes les plus populaires, c'est-à-dire ayant le plus d'amis"""
+    """ Retourne les personnes les plus populaires, c'est-à-dire ayant le plus d'amis."""
     max_amis = nb_amis_plus_pop(dico_reseau)
     most_pop = []
     personnes = list(dico_reseau)
