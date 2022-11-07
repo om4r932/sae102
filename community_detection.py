@@ -168,10 +168,27 @@ def order_by_decreasing_popularity(network, group):
     return group
 
 def find_community_by_decreasing_popularity(network):
-    pass
+    group = order_by_decreasing_popularity(network, get_people(network))
+    return find_community(network, group)
 
 def find_community_from_person(network, person):
-    pass
+    community = [person]
+    group = find_community_by_decreasing_popularity(network)
+    i = 0
+    while i < len(group):
+        if all_his_friends(network, group[i], community) and group[i] != person:
+            community.append(group[i])
+        i += 1
+    return community
 
 def find_max_community(network):
-    pass
+    peoples = get_people(network)
+    max_val = len(find_community_from_person(network, peoples[0]))
+    maxi = 0
+    i = 1
+    while i < len(peoples):
+        if max_val < len(find_community_from_person(network, peoples[i])):
+            max_val = len(find_community_from_person(network, peoples[i]))
+            maxi = i
+        i += 1
+    return find_community_from_person(network, peoples[maxi])
