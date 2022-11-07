@@ -153,8 +153,19 @@ def find_community(network, group):
     return community
 
 def order_by_decreasing_popularity(network, group):
-    pass
-
+    i = 0
+    while i < len(group):
+        max_val = len(network[group[i]])
+        maxi = i
+        j = i+1
+        while j < len(group):
+            if len(network[group[j]]) > max_val:
+                max_val = len(network[group[j]])
+                maxi = j
+            j += 1
+        group[i], group[maxi] = group[maxi], group[i]
+        i += 1
+    return group
 
 def find_community_by_decreasing_popularity(network):
     pass
