@@ -88,6 +88,7 @@ def les_plus_pop (dico_reseau):
 ##############
 
 def create_network(list_of_friends):
+    dico = {}
     pass
 
 def get_people(network):
