@@ -87,7 +87,7 @@ def les_plus_pop (dico_reseau):
 # SAE S01.02 #
 ##############
 
-def create_networks(list_of_friends):
+def create_network(list_of_friends):
     pass
 
 def get_people(network):
