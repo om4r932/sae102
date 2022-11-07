@@ -87,6 +87,14 @@ def les_plus_pop (dico_reseau):
 # SAE S01.02 #
 ##############
 
+dic_test = {
+  "Alice" : ["Bob", "Dominique"],
+  "Bob" : ["Alice", "Dominique", "Charlie"],
+  "Charlie" : ["Bob"],
+  "Dominique" : ["Bob", "Alice"]
+}
+
+
 def create_network(list_of_friends):
     dico = {}
     i = 0
@@ -105,10 +113,17 @@ def create_network(list_of_friends):
 
     
 def get_people(network):
-    pass
+    l=[]
+    i=0
+    keys=list(network.keys())
+    while i<len(keys):
+        if keys[i] not in l:
+            l.append(keys[i])
+        i+=1
+    return l
 
 def are_friends(network, person1, person2):
-    pass
+    return person2 in network[person1]
 
 def all_his_friends(network, person, group):
     pass
