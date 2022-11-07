@@ -126,11 +126,22 @@ def are_friends(network, person1, person2):
     return person2 in network[person1]
 
 def all_his_friends(network, person, group):
-    pass
+    i = 0
+    while i < len(group):
+        if not are_friends(network, person, group[i]):
+            return False
+        i += 1
+    return True
 
 def is_a_community(network, group):
-    pass
-
+    i = 0
+    while i < len(group):
+        tmp = group.copy()
+        tmp.pop(i)
+        if not all_his_friends(network, group[i], tmp):
+            return False
+        i += 1
+    return True
 
 def find_community(network, group):
     pass
