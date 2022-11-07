@@ -137,14 +137,20 @@ def is_a_community(network, group):
     i = 0
     while i < len(group):
         tmp = group.copy()
-        tmp.pop(i)
-        if not all_his_friends(network, group[i], tmp):
+        person = tmp.pop(i)
+        if not all_his_friends(network, person, tmp):
             return False
         i += 1
     return True
 
 def find_community(network, group):
-    pass
+    community = [group[0]]
+    i = 1
+    while i < len(group):
+        if all_his_friends(network, group[i], community):
+            community.append(group[i])
+        i += 1
+    return community
 
 def order_by_decreasing_popularity(network, group):
     pass
