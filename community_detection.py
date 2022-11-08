@@ -96,6 +96,9 @@ dic_test = {
 
 
 def create_network(list_of_friends):
+    """
+        Retourne le dictionnaire correspondant au réseau
+    """
     dico = {}
     i = 0
     while i < len(list_of_friends) // 2:
@@ -113,6 +116,9 @@ def create_network(list_of_friends):
 
     
 def get_people(network):
+    """
+        Retourne la liste des personnes du réseau dans un tableau.
+    """
     l=[]
     i=0
     keys=list(network.keys())
@@ -123,9 +129,15 @@ def get_people(network):
     return l
 
 def are_friends(network, person1, person2):
+    """
+        Retourne True si les deux personnes sont amies, et False sinon.
+    """
     return person2 in network[person1]
 
 def all_his_friends(network, person, group):
+    """
+        Retourne True si la personne est amie avec toutes les personnes du groupe, et False sinon.
+    """
     i = 0
     while i < len(group):
         if not are_friends(network, person, group[i]):
@@ -134,6 +146,9 @@ def all_his_friends(network, person, group):
     return True
 
 def is_a_community(network, group):
+    """
+        Retourne True si ce groupe est une communauté, et False sinon.
+    """
     i = 0
     while i < len(group):
         tmp = group.copy()
@@ -144,6 +159,13 @@ def is_a_community(network, group):
     return True
 
 def find_community(network, group):
+    """
+        Retourne une communauté en fonction de l'heuristique suivant :
+            - On part d'une communauté vide
+            - On considère les personnes les unes après les autres. Pour chacune des personnes,
+              si celle-ci est amie avec tous les membres de la communauté déjà créée,
+              alors on l'ajoute à la communauté.
+    """
     community = [group[0]]
     i = 1
     while i < len(group):
@@ -153,6 +175,9 @@ def find_community(network, group):
     return community
 
 def order_by_decreasing_popularity(network, group):
+    """
+        Trie le groupe de personnes selon la popularité (nombre d'amis) décroissante.
+    """
     i = 0
     while i < len(group):
         max_val = len(network[group[i]])
@@ -168,10 +193,22 @@ def order_by_decreasing_popularity(network, group):
     return group
 
 def find_community_by_decreasing_popularity(network):
+    """
+        Trie l'ensemble des personnes du réseau selon l'ordre décroissant de popularité
+        puis retourne la communauté trouvée en appliquant l'heuristique décrite dans la fonction find_community()
+    """
     group = order_by_decreasing_popularity(network, get_people(network))
     return find_community(network, group)
 
 def find_community_from_person(network, person):
+    """
+    Retourne une communauté maximale contenant cette personne selon l'heuristique suivante :
+        - On choisit une personne du réseau
+        - On crée une communauté contenant juste cette personne
+        - on considère les amis de cette personne par ordre de popularité décroissante. Pour chacune de ces personnes,
+          si celle-ci est amie avec tous les membres de la communauté déjà créée, 
+          alors on l'ajoute à la communauté.
+    """
     community = [person]
     group = find_community_by_decreasing_popularity(network)
     i = 0
@@ -182,6 +219,11 @@ def find_community_from_person(network, person):
     return community
 
 def find_max_community(network):
+    """
+        Retourne la plus grande communauté trouvée en appliquant
+        l'heuristique de recherche de communauté maximale donnée
+        par find_community_from_person pour toutes les personnes du réseau
+    """
     peoples = get_people(network)
     max_val = len(find_community_from_person(network, peoples[0]))
     maxi = 0
