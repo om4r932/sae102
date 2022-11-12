@@ -26,3 +26,11 @@ def test_is_a_community():
     assert is_a_community(dico_res, ['Björn', 'Rufino', 'Mady'])
     assert not is_a_community(dico_res, ["Cloe", "Idelle", "Mady", "Björn", "Marwa"])
     print("Test 5 passed !")
+
+def test_order_by_decreasing_popularity():
+    assert order_by_decreasing_popularity(dico_res, ["Mady"]) == ["Mady"]
+    assert order_by_decreasing_popularity(dico_res, ['Giedrius', 'Mady', 'Kirsa', 'Vittore']) == ['Mady', 'Vittore', 'Giedrius', 'Kirsa']
+    print("Test 6 passed !")
+
+
+print(order_by_decreasing_popularity(dico_res, ['Giedrius', 'Mady', 'Kirsa', 'Vittore']))
