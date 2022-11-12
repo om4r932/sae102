@@ -37,7 +37,7 @@ def taille_reseau(amis):
 
 def lecture_reseau(path):
     """ Retourne le tableau d'amis en fonction des informations contenues dans le fichier path."""
-    f = open(path, "r")
+    f = open(path, "r", encoding="utf-8")
     l = f.readlines()
     f.close()
     amis = []
