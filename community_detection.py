@@ -37,7 +37,7 @@ def taille_reseau(amis):
 
 def lecture_reseau(path):
     """ Retourne le tableau d'amis en fonction des informations contenues dans le fichier path."""
-    f = open(path, "r", encoding="utf-8")
+    f = open(path, "r", encoding="utf-8") #Je me suis d'ajouter le paramètre "encoding"
     l = f.readlines()
     f.close()
     amis = []
@@ -59,7 +59,7 @@ def dico_reseau(amis):
         i += 1
     return dico
 
-def nb_amis_plus_pop (dico_reseau):
+def nb_amis_plus_pop(dico_reseau):
     """ Retourne le nombre d'amis des personnes ayant le plus d'amis."""
     personnes = list(dico_reseau)
     maxi = len(dico_reseau[personnes[0]])
@@ -71,7 +71,7 @@ def nb_amis_plus_pop (dico_reseau):
     return maxi
 
 
-def les_plus_pop (dico_reseau):
+def les_plus_pop(dico_reseau):
     """ Retourne les personnes les plus populaires, c'est-à-dire ayant le plus d'amis."""
     max_amis = nb_amis_plus_pop(dico_reseau)
     most_pop = []
@@ -86,14 +86,6 @@ def les_plus_pop (dico_reseau):
 ##############
 # SAE S01.02 #
 ##############
-
-dic_test = {
-  "Alice" : ["Bob", "Dominique"],
-  "Bob" : ["Alice", "Dominique", "Charlie"],
-  "Charlie" : ["Bob"],
-  "Dominique" : ["Bob", "Alice"]
-}
-
 
 def create_network(list_of_friends):
     """
@@ -176,7 +168,7 @@ def find_community(network, group):
 
 def order_by_decreasing_popularity(network, group):
     """
-        Trie le groupe de personnes selon la popularité (nombre d'amis) décroissante.
+        Trie le groupe de personnes selon la popularité(nombre d'amis) décroissante.
     """
     i = 0
     while i < len(group):
