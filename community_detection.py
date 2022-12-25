@@ -158,8 +158,8 @@ def find_community(network, group):
               si celle-ci est amie avec tous les membres de la communauté déjà créée,
               alors on l'ajoute à la communauté.
     """
-    community = [group[0]]
-    i = 1
+    community = []
+    i = 0
     while i < len(group):
         if all_his_friends(network, group[i], community):
             community.append(group[i])
