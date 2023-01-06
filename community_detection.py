@@ -111,14 +111,8 @@ def get_people(network):
     """
         Retourne la liste des personnes du réseau dans un tableau.
     """
-    l=[]
-    i=0
-    keys=list(network.keys())
-    while i<len(keys):
-        if keys[i] not in l:
-            l.append(keys[i])
-        i+=1
-    return l
+    
+    return list(network)
 
 def are_friends(network, person1, person2):
     """
