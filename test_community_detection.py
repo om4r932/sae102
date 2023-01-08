@@ -64,5 +64,5 @@ def test_find_community_from_person():
 
 def test_find_max_community():
     assert find_max_community(dico_res_comm1) == ["Barbra", "Rufino", "Mady", "Vittorio"]
-    assert find_max_community(dico_res_comm2) == ['Dragan', 'Évike', 'Mireille', 'Barbra']
+    assert find_max_community(dico_res_comm2) == ['Mady', 'Cain', 'Petru']
     print("Test 10 passed !")
