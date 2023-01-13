@@ -56,13 +56,13 @@ def test_find_community_by_decreasing_popularity():
     print("Test 8 passed !")
 
 def test_find_community_from_person():
-    assert find_community_from_person(dico_res_comm1, "Idelle") == ["Idelle", "Mady"]
+    assert find_community_from_person(dico_res_comm1, "Idelle") == ['Idelle', 'Mady', 'Cloe', 'Björn']
     assert find_community_from_person(dico_res_comm1, "Giedrius") == ["Giedrius", "Rufino", "Mady", "Vittorio"]
-    assert find_community_from_person(dico_res_comm2, "Zayneb") == ["Zayneb"]
-    assert find_community_from_person(dico_res_comm2, "Mady") == ["Mady", "Cain", "Petru"]
+    assert find_community_from_person(dico_res_comm2, "Zayneb") == ['Zayneb', 'Glenys', 'Iagan']
+    assert find_community_from_person(dico_res_comm2, "Mady") == ['Mady', 'Séléna', 'Cain']
     print("Test 9 passed !")
 
 def test_find_max_community():
-    assert find_max_community(dico_res_comm1) == ["Barbra", "Rufino", "Mady", "Vittorio"]
-    assert find_max_community(dico_res_comm2) == ['Mady', 'Cain', 'Petru']
+    assert find_max_community(dico_res_comm1) == ['Cloe', 'Mady', 'Vittorio', 'Barbra', 'Vittore']
+    assert find_max_community(dico_res_comm2) == ['Iagan', 'Dragan', 'Christ', 'Barbra']
     print("Test 10 passed !")

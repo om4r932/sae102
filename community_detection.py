@@ -196,7 +196,7 @@ def find_community_from_person(network, person):
           alors on l'ajoute à la communauté.
     """
     community = [person]
-    group = find_community_by_decreasing_popularity(network)
+    group = order_by_decreasing_popularity(network, get_people(network))
     i = 0
     while i < len(group):
         if all_his_friends(network, group[i], community) and group[i] != person:
