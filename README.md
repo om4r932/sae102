@@ -15,8 +15,8 @@ La SAÉ sera notée de la manière suivante :
 
 ## Résultats
 
-Rendu du projet : 17.5 / 20
-Côntrole : 10.83 / 20
+- Rendu du projet : 17.5 / 20
+- Contrôle : 10.83 / 20
 
 ## Sujet
 
