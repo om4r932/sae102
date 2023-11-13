@@ -3,8 +3,6 @@
 
 Ce document correspond au sujet de la SAÉ S1.02 de l'année universitaire 2022/2023. Ce travail est à faire par binôme en autonomie. Il correspond à la suite de la SAÉ S01.01.
 
-**La SAÉ devra être rendue avant le  13 janvier.**
-
 ## Évaluation
 
 La SAÉ sera notée de la manière suivante : 
@@ -13,9 +11,12 @@ La SAÉ sera notée de la manière suivante :
     - Tests unitaires rendus : 2 points
     - Qualité du code (clarté, efficacité, commentaires, docstring) : 2 points
     - Comparaison expérimentale et théorique (fichier notebook) : 2 points
-- Contrôle du 13 janvier : 12 points 
+- Contrôle du 13 janvier : 12 points
 
-**Attention :** Pour le contrôle du 13 janvier, il faut connaître le sujet et le code (les structures de données utilisées et les diffférentes fonctions définies) dans les SAÉ S01.01 et S01.02.
+## Résultats
+
+Rendu du projet : 17.5 / 20
+Côntrole : 10.83 / 20
 
 ## Sujet
 
